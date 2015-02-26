@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./js/main.js"></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
         <div id="container">
             <div id="left">
                 <h4><a href="../index.html">View all services</a></h4>
-            </div>
+			</div>
             <div id="center">
                 <h1>e-Link</h1>
             </div>
@@ -24,14 +25,121 @@
     </div>
 
     <div id="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel neque
-            vel felis posuere scelerisque vel eget risus. Quisque fringilla lacinia
-            nulla, convallis blandit tellus vulputate sit amet.</p>
+        <p>This web site show cases and combines available demo nif web services.
+            Note that the list displayed here is not complete. More tools will
+            be added soon. Read the <a href="http://svn.aksw.org/papers/2012/NIF/EKAW_DEMO/public_preprint.pdf"
+            target="_blank">full documentation</a> [<a href="http://dblp.uni-trier.de/rec/bibtex/conf/ekaw/HellmannLAN12"
+            target="_blank&quot;">Bibtex</a>]. The code for this demo is available
+            <a href="https://github.com/NLP2RDF/software/tree/master/php/demo" target="_blank">here</a>.
+            This service also allows you to retrieve the raw data. Use the <em>format</em> parameter
+            which supports <em>rdfxml,
+																					turtle, rdfjson, ntriples</em> as values. You can also use
+            the <em>Accept:</em>
+            header with the appropriate content-type. Note that this service is currently using
+            NIF-2.0 specification.</p>
+    </div>
+    <div id="inputs">
+        <div>
+            <fieldset>
+                <legend>Action</legend>
+                <input type="radio" id="radio_action_1" name="action" value="merge" checked="checked"
+                class="radio">
+                <label for="radio_action_1">&nbsp;display and merge
+                </label>
+                <br>
+                <input type="radio" id="radio_action_2" name="action" value="validate" disabled="disabled"
+                class="radio disabled">
+                <label for="radio_action_2">&nbsp;validate</label>
+                <br>
+                <input type="radio" id="radio_action_3" name="action" value="summarize" disabled="disabled"
+                class="radio disabled">
+                <label for="radio_action_3">&nbsp;summarize</label>
+            </fieldset>
+            <fieldset>
+                <legend>URI Recipe</legend>
+                <input type="radio" id="radio_uri_1" name="urirecipe" value="offset" checked="checked"
+                class="radio">
+                <label for="radio_uri_1">&nbsp;offset</label>
+                <br>
+                <input type="radio" id="radio_uri_2" name="urirecipe" value="context-hash" class="radio">
+                <label for="radio_uri_2">&nbsp;context-hash</label>
+            </fieldset>
+            <fieldset>
+                <legend>Prefix</legend>
+                <input id="text1" type="text" name="prefix" value="http://prefix.given.by/theClient#">
+            </fieldset>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>Tools</legend>
+                <input type="checkbox" name="service[]" value="http://demo.nlp2rdf.org:9996/snowball"
+                class="checkbox">
+                <label for="service[]">&nbsp;<a href="http://demo.nlp2rdf.org:9996/snowball" target="_blank">Snowball Stemmer</a> 
+                </label>
+                <br>
+                <input type="checkbox" name="service[]" value="http://demo.nlp2rdf.org:9999/stanfordcorenlpn"
+                class="checkbox">
+                <label for="service[]">&nbsp;<a href="http://demo.nlp2rdf.org:9999/stanfordcorenlpn" target="_blank">Stanford CoreNLP</a> 
+                </label>
+                <br>
+                <input type="checkbox" name="service[]" value="http://demo.nlp2rdf.org:9998/opennlp"
+                checked="" class="checkbox">
+                <label for="service[]">&nbsp;<a href="http://demo.nlp2rdf.org:9998/opennlp" target="_blank">OpenNLP</a>
+                </label>
+                <br>
+                <input type="checkbox" name="service[]" value="http://demo.nlp2rdf.org:9995/spotlight"
+                checked="" class="checkbox">
+                <label for="service[]">&nbsp;<a href="http://demo.nlp2rdf.org:9995/spotlight" target="_blank">DBpedia Spotlight</a> (Confidence:
+                    <input style="width:35" name="confidence" value="0.5" type="text">)</label>
+                <br>
+
+                <label for="text2">
+                    <p style="display: inline">Other NIF service:</p>&nbsp;</label>
+                <input id="text2" type="text" name="service[]" value="">
+                <br>
+                <p style="display: inline">Coming soon:</p>
+                <br>
+                <input type="checkbox" disabled="disabled" class="checkbox disabled">
+                <label>&nbsp;<a href="https://bitbucket.org/gruenerkaktus/uimanif/overview">UIMA</a>
+                </label>
+                <br>
+                <input type="checkbox" disabled="disabled" class="checkbox disabled">
+                <label>&nbsp;<a href="https://bitbucket.org/mack/mallet2nif">Mallet</a>
+                </label>
+                <br>
+                <input type="checkbox" disabled="disabled" class="checkbox disabled">
+                <label>&nbsp;<a href="https://bitbucket.org/d_cherix/gan/overview">Gate ANNIE</a>
+                </label>
+                <br>
+                <input type="checkbox" disabled="disabled" class="checkbox disabled">
+                <label>&nbsp;<a href="">DBpedia Spotlight</a>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Input text</legend>
+                <textarea name="text">President Obama on Monday will call for a new minimum tax rate
+                    for individuals making more than $1 million a year.</textarea>
+            </fieldset>
+        </div>
+    </div>
+
+    <div id="buttons">
+        <a class="btn" href="javascript:void(0)" onclick="submit()">Submit</a>
+        <a class="btn" href="javascript:void(0)" onclick="reset()">Reset</a>
+    </div>
+
+
+    <div id="outputs">
+        <fieldset>
+            <legend>Merged Output</legend>
+            <textarea name="output"></textarea>
+        </fieldset>
     </div>
 
     <footer>
         <hr>
-        <p>Disclaimer: ...</p>
+        <p id="disclaimer">Disclaimer: ...</p>
         <p>This project is co-funded by the EC under the H2020 Framework Programme
             for Research and Innovation</p>
     </footer>
