@@ -28,3 +28,6 @@ textarea {
     margin-bottom: 20px;
     margin-top: 20px;
 }
+table, th, td {
+    border: 1px solid black;
+}
