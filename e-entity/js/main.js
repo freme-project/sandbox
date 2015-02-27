@@ -12,13 +12,18 @@ function classifier(input, cb) {
 
 function submit() {
   var input = $('#text').val();
-  cb = function(data) {
+  var cb_ec = function(data) {
     $("#result").val(JSON.stringify(data));
     convertECtoTable(data);
   };
 
+  var cb = function(data) {
+    $("#result").val(JSON.stringify(data));
+  }
+
+
   if ($("input[name=action]:checked").val() === "ec") {
-    classifier(input, cb);
+    classifier(input, cb_ec);
   } else {
     spotlight(input, cb);
   }
@@ -34,7 +39,7 @@ function convertECtoTable(data) {
   $table = $("<table></table>");
   $header = $("<tr><th>Word</th><th>Entity</th><th>Entity URI</th><th>Type URI</th></tr>");
   $table.append($header);
-  
+
 
   for (i in data) {
     var d = data[i];
@@ -46,13 +51,13 @@ function convertECtoTable(data) {
       $row.append("<td>" + word + "</td>");
       var type = types[j];
       var typeURI = type.typeURI;
-	  var entityURI = type.entityURI;
-	  var entityLabel = type.entityLabel;
+      var entityURI = type.entityURI;
+      var entityLabel = type.entityLabel;
       $row.append("<td>" + entityLabel + "</td>");
       $row.append("<td><a href=\"" + entityURI + "\">" + entityURI + "</td>");
-      $row.append("<td><a href=\"" + typeURI + "\">" + typeURI  + "</td>");
+      $row.append("<td><a href=\"" + typeURI + "\">" + typeURI + "</td>");
       $table.append($row);
-	}
+    }
 
     $table.append($row);
   }
