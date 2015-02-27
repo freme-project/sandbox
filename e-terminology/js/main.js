@@ -40,7 +40,7 @@ function submit() {
     '',
     function(result) {
       $("#terminologyText-its").val(result.its);
-      $("#terminologyText-tbx").val(result.tdx);
+      $("#terminologyText-tbx").val(result.tbx);
     },
     function(ex) {
       console.log(ex.responseText);
