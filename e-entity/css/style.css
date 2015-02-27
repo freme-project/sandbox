@@ -16,7 +16,9 @@
 #description,
 #inputs,
 #outputs,
-#buttons {
+#buttons,
+#resultTable
+{
     width: 50%;
     margin: 0 auto;
     text-align: center;
@@ -30,4 +32,7 @@ textarea {
 }
 table, th, td {
     border: 1px solid black;
+}
+table {
+	width: 100%;
 }

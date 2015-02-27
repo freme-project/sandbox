@@ -37,7 +37,7 @@ function reset() {
 
 function convertECtoTable(data) {
   $table = $("<table></table>");
-  $header = $("<tr><th>Word</th><th>Entity</th><th>Entity URI</th><th>Type URI</th></tr>");
+  $header = $("<tr><th>Word</th><th>Entity</th><th>Type</th></tr>");
   $table.append($header);
 
 
@@ -51,11 +51,11 @@ function convertECtoTable(data) {
       $row.append("<td>" + word + "</td>");
       var type = types[j];
       var typeURI = type.typeURI;
+	  var typeLabel = type.typeLabel;
       var entityURI = type.entityURI;
       var entityLabel = type.entityLabel;
-      $row.append("<td>" + entityLabel + "</td>");
-      $row.append("<td><a href=\"" + entityURI + "\">" + entityURI + "</td>");
-      $row.append("<td><a href=\"" + typeURI + "\">" + typeURI + "</td>");
+      $row.append("<td><a href=\"" + entityURI + "\">" + entityLabel + "</td>");
+      $row.append("<td><a href=\"" + typeURI + "\">" + typeLabel + "</td>");
       $table.append($row);
     }
 
