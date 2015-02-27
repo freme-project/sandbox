@@ -18,8 +18,7 @@ Tilde.Translator.url = 'https://letsmt.eu/ws/Service.svc/json/';
 Tilde.Translator.systems = [];
 Tilde.Translator.getSystem = function(sourceLang, targetLang, callback, error) {
   if (Tilde.Translator.systems.length == 0) {
-    $.ajax(
-      {
+    $.ajax({
         type: 'GET',
         dataType: 'json',
         url: Tilde.Translator.url + 'GetSystemList',
@@ -31,21 +30,20 @@ Tilde.Translator.getSystem = function(sourceLang, targetLang, callback, error) {
           'client-id': Tilde.Translator.clientid
         }
       })
-    .done(function(data) {
-      console.log(data);
-      $.each(data.System, function(idx, sys) {
-        var status = Tilde.Translator.getSystemMetaValue(sys.Metadata, 'status');
-        if (status === 'running') {
-          Tilde.Translator.systems.push(sys);
-        }
-      });
-      callback(Tilde.Translator.filteredSystem(sourceLang, targetLang));
-    })
-    .fail(function(ex) {
-      error(ex.statusText, ex.responseText);
-    })
-  } else
-  {
+      .done(function(data) {
+        console.log(data);
+        $.each(data.System, function(idx, sys) {
+          var status = Tilde.Translator.getSystemMetaValue(sys.Metadata, 'status');
+          if (status === 'running') {
+            Tilde.Translator.systems.push(sys);
+          }
+        });
+        callback(Tilde.Translator.filteredSystem(sourceLang, targetLang));
+      })
+      .fail(function(ex) {
+        error(ex.statusText, ex.responseText);
+      })
+  } else {
     callback(Tilde.Translator.filteredSystem(sourceLang, targetLang));
   }
 };
@@ -81,8 +79,7 @@ Tilde.Translator.getSystemMetaValue = function(array, key) {
 }
 
 Tilde.Translator.translate = function(text, system, success, error) {
-  $.ajax(
-    {
+  $.ajax({
       type: 'GET',
       dataType: 'json',
       url: Tilde.Translator.url + 'Translate',
@@ -96,19 +93,22 @@ Tilde.Translator.translate = function(text, system, success, error) {
         'client-id': Tilde.Translator.clientid
       }
     })
-  .done(function(data) {
-    success(data);
-  })
-  .fail(function(ex) {
-    error(ex.statusText, ex.responseText);
-  });
+    .done(function(data) {
+      success(data);
+    })
+    .fail(function(ex) {
+      error(ex.statusText, ex.responseText);
+    });
 }
 
 function submit() {
+  var e = document.getElementById("toLanguage");
+  var lang = e.options[e.selectedIndex].value;
+  
   Tilde.eTranslate(
     $('#text').val(),
     'en',
-    'de',
+    lang,
     function(result) {
       $('#translatedText').text(result);
     },
@@ -120,6 +120,6 @@ function submit() {
 }
 
 function reset() {
-	$('#translatedText').val("");
-	$('#text').val("");
+  $('#translatedText').val("");
+  $('#text').val("");
 }

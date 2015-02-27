@@ -13,8 +13,18 @@
     margin: 0 auto;
     width: 50%;
 }
-#description {
+#description,
+#inputs,
+#outputs,
+#buttons {
     width: 50%;
     margin: 0 auto;
     text-align: center;
+}
+textarea {
+    width: 100%;
+}
+#buttons {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }

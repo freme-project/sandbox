@@ -4,6 +4,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -27,6 +30,36 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel neque
             vel felis posuere scelerisque vel eget risus. Quisque fringilla lacinia
             nulla, convallis blandit tellus vulputate sit amet.</p>
+    </div>
+
+    <div id="inputs">
+        <fieldset>
+            <legend>Service</legend>
+            <input type="radio" id="service_ec" name="action" value="ec" checked="checked"
+            class="radio">
+            <label for="service_ec">&nbsp;Entityclassifier.eu
+            </label>
+            <br>
+            <input type="radio" id="service_db" name="action" value="db" disabled>
+            <label for="service_db">&nbsp;DBpedia Spotlight</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Input Text</legend>
+            <textarea id="text" rows="4" placeholder="Enter text"></textarea>
+        </fieldset>
+    </div>
+
+    <div id="buttons">
+        <a class="btn" href="javascript:void(0)" onclick="submit()">Submit</a>
+        <a class="btn" href="javascript:void(0)" onclick="reset()">Reset</a>
+    </div>
+
+    <div id="outputs">
+        <fieldset>
+            <legend>Result</legend>
+            <textarea id="result" name="output" rows="4"></textarea>
+        </fieldset>
     </div>
 
     <footer>

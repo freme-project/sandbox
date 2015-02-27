@@ -4,6 +4,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="./js/main.js"></script>
 </head>
 
 <body>
@@ -28,6 +31,38 @@
             vel felis posuere scelerisque vel eget risus. Quisque fringilla lacinia
             nulla, convallis blandit tellus vulputate sit amet.</p>
     </div>
+
+    <div id="input">
+        <fieldset>
+            <legend>Output Language</legend>
+            <select id="toLanguage">
+                <option value="de">German</option>
+                <option value="el">Greek</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="it">Italian</option>
+                <option value="nl">Dutch</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Input Text</legend>
+            <textarea id="text" maxlength="200" rows="4" placeholder="Enter text (in English)"></textarea>
+        </fieldset>
+    </div>
+
+    <div id="buttons">
+        <a class="btn" href="javascript:void(0)" onclick="submit()">Submit</a>
+        <a class="btn" href="javascript:void(0)" onclick="reset()">Reset</a>
+    </div>
+
+    <div id="outputs">
+        <fieldset>
+            <legend>Translated Text</legend>
+            <textarea id="translatedText" name="output" rows="4" placeholder="Tranlsation of the input text comes here."></textarea>
+        </fieldset>
+    </div>
+
+
 
     <footer>
         <hr>
