@@ -35,7 +35,7 @@ function submit() {
 
   Tilde.eTerminology(
     $('#text').val(),
-    'en',
+    '',
     lang,
     '',
     function(result) {
