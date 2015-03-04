@@ -54,8 +54,8 @@ function convertECtoTable(data) {
 	  var typeLabel = type.typeLabel;
       var entityURI = type.entityURI;
       var entityLabel = type.entityLabel;
-      $row.append("<td><a href=\"" + entityURI + "\">" + entityLabel + "</td>");
-      $row.append("<td><a href=\"" + typeURI + "\">" + typeLabel + "</td>");
+      $row.append("<td><a target=\"_blank\" href=\"" + entityURI + "\">" + entityLabel + "</td>");
+      $row.append("<td><a target=\"_blank\" href=\"" + typeURI + "\">" + typeLabel + "</td>");
       $table.append($row);
     }
 
