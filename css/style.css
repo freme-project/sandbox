@@ -1,36 +1,64 @@
-.btn {
-    -webkit-border-radius: 9;
-    -moz-border-radius: 9;
-    border-radius: 9px;
-    font-family: Arial;
-    color: #ffffff;
-    font-size: 20px;
-    background: #293559;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-}
-.btn:hover {
-    background: #aeb0bd;
-    text-decoration: none;
-}
-.service,
-footer,
-#header {
-    width: 50%;
+body {
+	font-family: Calibri, Verdana, Arial;
+	font-size: 14px;
+    width: 80%;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
+
+hr {
+  border: 1px solid #DDD;
+  width: 100%;
+  margin-top:20px;
+}
+
+textarea {
+	width: 80%;
+	height: 100px;
+}
+
 #header h1 {
     color: #293559;
 }
 #header {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 .service {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 #freme-logo {
     width: 350px;
-    margin-left: 40px;
     margin-top: 40px;
+}
+
+.button {
+    -webkit-border-radius: 9;
+    -moz-border-radius: 9;
+	float: left;
+    border-radius: 9px;
+    background: #293559;
+    font-family: Arial;
+    font-size: 20px;
+    width: 15%;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-right: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+    padding: 10px 20px 10px 20px;
+}
+.button:hover {
+    background: #aeb0bd;
+    text-decoration: none;
+}
+
+
+.rightcol {
+	width: 70%;
+}
+
+.outputs {
+    clear: both;
 }

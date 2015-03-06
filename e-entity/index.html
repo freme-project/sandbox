@@ -12,63 +12,42 @@
 
 <body>
 
-    <a href="http://www.freme-project.eu">
-        <img id="freme-logo" src="../images/freme-logo.png" />
-    </a>
+<a href="http://www.freme-project.eu">
+	<img id="freme-logo" src="../images/freme-logo.png" />
+</a>
 
-    <div id="header">
-        <div id="container">
-            <div id="left">
-                <h4><a href="../index.html">View all services</a></h4>
-            </div>
-            <div id="center">
-                <h1>e-Entity</h1>
-            </div>
-        </div>
-    </div>
+<div id="header">
+<h4><a href="../index.html">View all services</a></h4>
+<h1>e-Entity</h1>
+</div>
 
-    <div id="description">
-        <p>E-entity is based on entity recognition software and existing linked entity
-            datasets from the Linked Data and Open Data. Its purpose is to locate
-            and classify items in text into pre-defined categories such as the
-            names of persons, organizations, locations etc.
-            <br>Below you can test this service, however, mind the <a href="#disclaimer">disclaimer</a> at
-            the bottom of the page.</p>
-    </div>
+<div id="description">
+	<p>E-entity is based on entity recognition software and existing linked entity datasets from the Linked Data and Open Data. Its purpose is to locate and classify items in text into pre-defined categories such as the names of persons, organizations, locations etc.</p>
+	<p>However, keep in mind that there is a <a href="#disclaimer">disclaimer</a> at the bottom of the page.</p>
+</div>
 
-    <div id="inputs">
-        <fieldset>
-            <legend>Service</legend>
-            <input type="radio" id="service_ec" name="action" value="ec" checked="checked"
-            class="radio">
-            <label for="service_ec">&nbsp;Entityclassifier.eu
-            </label>
-            <br>
-            <input type="radio" id="service_db" name="action" value="db" disabled>
-            <label for="service_db">&nbsp;DBpedia Spotlight</label>
-        </fieldset>
+<div class="inputs">
+		<h2>Pick a source</h2>
+		<input type="radio" id="service_ec" name="action" value="ec" checked="checked" class="radio">
+        <label for="service_ec">Entityclassifier.eu</label>
+        <br/>
+        <input type="radio" id="service_db" name="action" value="db" disabled>
+        <label for="service_db">DBpedia Spotlight (coming soon)</label>
+		<h2>Input Text</h2>
+        <textarea id="text" rows="4" cols="60" placeholder="Enter text"></textarea>
+</div>
 
-        <fieldset>
-            <legend>Input Text</legend>
-            <textarea id="text" rows="4" placeholder="Enter text"></textarea>
-        </fieldset>
-    </div>
+<a class="button" href="javascript:void(0)" onclick="submit()">Submit</a>
+<a class="button" href="javascript:void(0)" onclick="reset()">Reset</a>
 
-    <div id="buttons">
-        <a class="btn" href="javascript:void(0)" onclick="submit()">Submit</a>
-        <a class="btn" href="javascript:void(0)" onclick="reset()">Reset</a>
-    </div>
-
-    <div id="outputs">
-        <h4>Results</h4>
-        <div id="resultTable">
-            <p>Table with results will be shown here.</p>
-        </div>
-        <fieldset>
-            <legend>JSON Response</legend>
-            <textarea id="result" name="output" rows="4"></textarea>
-        </fieldset>
-    </div>
+<div class="outputs">
+	<h2>Results</h2>
+	<div id="resultTable">
+		<p>Table with results will be shown here.</p>
+	</div>
+	<h2>JSON Response</h2>
+	<textarea id="result" name="output" rows="10" cols="80"></textarea>
+</div>
 
     <footer>
         <hr>
