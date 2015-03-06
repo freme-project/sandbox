@@ -12,72 +12,54 @@
 
 <body>
 
-    <a href="http://www.freme-project.eu">
-        <img id="freme-logo" src="../images/freme-logo.png" />
-    </a>
+<a href="http://www.freme-project.eu">
+	<img id="freme-logo" src="../images/freme-logo.png" />
+</a>
 
-    <div id="header">
-        <div id="container">
-            <div id="left">
-                <h4><a href="../index.html">View all services</a></h4>
-            </div>
-            <div id="center">
-                <h1>e-Translation</h1>
-            </div>
-        </div>
-    </div>
+<div id="header">
+<h4><a href="../index.html">View all services</a></h4>
+<h1>e-Translation</h1>
+</div>
 
-    <div id="description">
-        <p>E-Translation is based on cloud machine translation services for building
-            custom machine translation systems. Its purpose is to automatically
-            translate content from a source language to a target language.
-            <br>Below you can test this service, however, mind the <a href="#disclaimer">disclaimer</a> at
-            the bottom of the page.</p>
-    </div>
+<div id="description">
+<p>E-Translation is based on cloud machine translation services for building custom machine translation systems. Its purpose is to automatically translate content from a source language to a target language.</p>
+<p>Below you can test this service, however, mind the <a href="#disclaimer">disclaimer</a> at the bottom of the page.</p>
+</div>
 
-    <div id="input">
-        <fieldset>
-            <legend>Output Language</legend>
-            <select id="toLanguage">
-                <option value="de">German</option>
-                <option value="el">Greek</option>
-                <option value="es">Spanish</option>
-                <option value="fr">French</option>
-                <option value="it">Italian</option>
-                <option value="nl">Dutch</option>
-            </select>
-        </fieldset>
-        <fieldset>
-            <legend>Input Text</legend>
-            <textarea id="text" maxlength="200" rows="4" placeholder="Enter text (in English)"></textarea>
-        </fieldset>
-    </div>
+<div class="input">
+	<h2>Output Language</h2>
+	
+<select id="toLanguage">
+	<option value="de">German</option>
+	<option value="el">Greek</option>
+	<option value="es">Spanish</option>
+	<option value="fr">French</option>
+	<option value="it">Italian</option>
+	<option value="nl">Dutch</option>
+</select>
+<h2>Input Text</h2>
+<textarea id="text" maxlength="200" rows="4" cols="80" placeholder="Enter text (in English)"></textarea>
+</div>
 
-    <div id="buttons">
-        <a class="btn" href="javascript:void(0)" onclick="submit()">Submit</a>
-        <a class="btn" href="javascript:void(0)" onclick="reset()">Reset</a>
-    </div>
+<a class="button" href="javascript:void(0)" onclick="submit()">Submit</a>
+<a class="button" href="javascript:void(0)" onclick="reset()">Reset</a>
 
-    <div id="outputs">
-        <fieldset>
-            <legend>Translated Text</legend>
-            <textarea id="translatedText" name="output" rows="4" placeholder="Tranlsation of the input text comes here."></textarea>
-        </fieldset>
-    </div>
+<div class="outputs">
+	<h2>Translated Text</h2>
+	<textarea id="translatedText" name="output" rows="4" cols="80" placeholder="Tranlsation of the input text comes here."></textarea>
+</div>
 
-
-
-    <footer>
-        <hr>
-        <p id="disclaimer">DISCLAIMER: The functionality provided on this page is based on (a) service(s)
-            that is/are currently under development. The stability of this website
-            and the underlying service(s) can not be guaranteed. The input and
-            output of the service(s) is subject to change. Currently, you are only
-            allowed to access this/these service(s) through this website. You are
-            not allowed to use the API('s) directly.</p>
-        <p>This project is co-funded by the EC under the H2020 Framework Programme
-            for Research and Innovation</p>
-    </footer>
+<footer>
+	<hr>
+	<p id="disclaimer">DISCLAIMER: The functionality provided on this page is based on (a) service(s)
+		that is/are currently under development. The stability of this website
+		and the underlying service(s) can not be guaranteed. The input and
+		output of the service(s) is subject to change. Currently, you are only
+		allowed to access this/these service(s) through this website. You are
+		not allowed to use the API('s) directly.</p>
+	<p>This project is co-funded by the EC under the H2020 Framework Programme
+		for Research and Innovation</p>
+</footer>
 </body>
 
 </html>

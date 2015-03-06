@@ -1,38 +1,9 @@
-#container {
-    width: 100%;
-}
-#left {
-    float: left;
-    width: 150px;
-}
-#right {
-    float: right;
-    width: 100px;
-}
-#center {
-    margin: 0 auto;
-    width: 50%;
-}
-#description,
-#inputs,
-#outputs,
-#buttons,
-#resultTable
-{
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-}
-textarea {
-    width: 100%;
-}
-#buttons {
-    margin-bottom: 20px;
-    margin-top: 20px;
+table {
+	width: 100%;
+	border-collapse: collapse;
 }
 table, th, td {
     border: 1px solid black;
+    padding: 5px;
 }
-table {
-	width: 100%;
-}
+
