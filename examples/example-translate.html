@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<title>FREME e-Translate sandbox</title>
+		<script src="jquery-2.1.3.min.js"></script>
+		<script src="freme-core.js"></script>
+		<script src="freme-translate-tilde.js"></script>
+		<script src="freme-translate-yandex.js"></script>
+		<script type="text/javascript">
+		
+			$(document).ready(function() {
+				createLanguageSelector("tilde", "#tilde-select-language");
+				createLanguageSelector("yandex", "#yandex-select-language");
+			});
+
+			function createLanguageSelector(plugin, select) {
+				var dirs = FREME.getPluginParameter("translate", plugin, "translationDirections");
+				dirs.sort();
+				for (var i = 0; i < dirs.length; i++) {
+					var option = new Option(dirs[i], dirs[i]);
+					$(select).append(option);
+				}
+			};
+
+			function tildeTranslate() {
+
+				var text = $('#tilde-input-text').val();
+				var direction = $('#tilde-select-language').val();
+				var parts = direction.split("-");
+				var sourceLang = parts[0];
+				var targetLang = parts[1];
+
+				FREME.translate("tilde", {
+					clientId : 'u-bd13faca-b816-4085-95d5-05373d695ab7',
+					appId : 'freme',
+					text : text,
+					sourceLang : sourceLang,
+					targetLang : targetLang,
+					success : function(text) {
+						$('#tilde-output-text').html(text);
+					},
+					error : function(text) {
+						console.error("error: " + text);
+					}
+				});
+			}
+
+			function yandexTranslate() {
+			
+				var text = $('#yandex-input-text').val();
+				var direction = $('#yandex-select-language').val();
+				var parts = direction.split("-");
+				var sourceLang = parts[0];
+				var targetLang = parts[1];
+				
+				FREME.translate("yandex", {
+					apiKey : 'trnsl.1.1.20150304T104754Z.b491e9f858da3292.34c41e264cc286665bf3f12ac56888e6809055df',
+					text : text,
+					sourceLang : sourceLang,
+					targetLang : targetLang,
+					success : function(text) {
+						$('#yandex-output-text').html(text);
+					},
+					error : function(text) {
+						console.error("error: " + text);
+					}
+				});
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>FREME e-Translate sandbox</h1>
+
+		This page shows demos of each translation service that is incorporated in FREME.
+
+		<br/>
+		<br/>
+		<br/>
+
+		<table>
+			<tr>
+				<td colspan="2"><h2>TILDE translator</h2></td>
+			</tr>
+			<tr valign="top">
+				<td width="50%"> Input Text:
+				<br/>
+				<textarea cols="50" rows="5" id="tilde-input-text">Type your text here</textarea>
+				<br/>
+				Languages: <select id="tilde-select-language"></select>
+				<br/>
+				<input type="button" value="translate" onclick="tildeTranslate(); void(0);" />
+				</td>
+				<td width="50%"> Translation: <div id="tilde-output-text"></div></td>
+			</tr>
+			<tr>
+			<td colspan="2"><br/><h2>Yandex translator</h2></td>
+			</tr>
+			<tr valign="top">
+				<td width="50%"> Input Text:
+				<br/>
+				<textarea cols="50" rows="5" id="yandex-input-text">Type your text here</textarea>
+				<br/>
+				Languages: <select id="yandex-select-language"></select>
+				<br/>
+				<input type="button" value="translate" onclick="yandexTranslate(); void(0);" />
+				</td>
+				<td width="50%"> Translation: <div id="yandex-output-text"></div></td>
+			</tr>
+		</table>
+
+		<br/>
+		<br/>
+		<br/>
+
+	</body>
+</html>
