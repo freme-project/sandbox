@@ -28,7 +28,7 @@
 				return FREME.ALL_OK;
 			});
 
-			function translate() {
+			function translate_caps() {
 				var inputText = $("#input").val();
 
 				var error = FREME.translate("example-capitalize", {
@@ -52,6 +52,6 @@
 
 		Input text:
 		<input type="text" id="input" />
-		<input type="button" onclick="translate();" value="translate" />
+		<input type="button" onclick="translate_caps();" value="translate" />
 	</body>
 </html>
