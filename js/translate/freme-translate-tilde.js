@@ -133,6 +133,8 @@ FREME.registerPlugin("translate", "tilde", function(options) {
 	};
 
 	Tilde.eTranslate(text, sourceLang, targetLang, success, error);
+	
+	return FREME.ALL_OK;
 });
 
 FREME.addPluginParameter("translate", "tilde", "translationDirections", ["de-en", "en-de"]);
