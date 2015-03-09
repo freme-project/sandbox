@@ -52,26 +52,26 @@ var FREME = {
 	},
 
 	translate : function(plugin, options) {
-		this._executePlugin("translate", plugin, options);
+		return this._executePlugin("translate", plugin, options);
 	},
 
 	link : function(provider, options) {
-		this._executePlugin("link", plugin, options);
+		return this._executePlugin("link", plugin, options);
 	},
 
 	i18n : function(plugin, options) {
-		this._executePlugin("i18n", plugin, options);
+		return this._executePlugin("i18n", plugin, options);
 	},
 
 	entity : function(plugin, options) {
-		this._executePlugin("entity", plugin, options);
+		return this._executePlugin("entity", plugin, options);
 	},
 
 	terminology : function(plugin, options) {
-		this._executePlugin("terminology", plugin, options);
+		return this._executePlugin("terminology", plugin, options);
 	},
 
 	publish : function(plugin, options) {
-		this._executePlugin("publish", plugin, options);
-	},
+		return this._executePlugin("publish", plugin, options);
+	}
 };
