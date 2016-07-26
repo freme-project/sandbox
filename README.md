@@ -7,4 +7,4 @@ Commits to the branch "gh-pages" will be deployed immediately to the homepage.
 
 The wiki of this repository hosts all documentation for Javascript client codes of FREME.
  
-**This repository is depricated. It is not used any more.**
+**This repository is depricated. It is not used and not maintained any more.**
